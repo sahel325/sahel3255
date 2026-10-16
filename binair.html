@@ -5,71 +5,166 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sahel | Binair</title>
   <link rel="stylesheet" href="style.css">
+  <!-- JavaScript maakt de binaire knoppen interactief. -->
+  <script src="script.js" defer></script>
 </head>
 <body>
 
 <header>
-  <h2>Sahel's website</h2>
+  <a class="logo" href="index.html">SAHEL<span>.ONLINE</span></a>
   <nav>
     <a href="index.html">Home</a>
-    <a href="computers.html">Computers</a>
-    <a href="binair.html">Binair</a>
-    <a href="kleuren.html">Kleuren</a>
-    <a href="ai.html">AI</a>
+    <details class="dropdown">
+      <summary>Ontdekken ▾</summary>
+      <div class="dropdown-links">
+        <a href="computers.html">💻 Computers</a>
+        <a href="binair.html">🔢 Binair stelsel</a>
+        <a href="kleuren.html">🎨 Kleurenlab</a>
+        <a href="ai.html">✨ Kunstmatige intelligentie</a>
+      </div>
+    </details>
   </nav>
 </header>
 
 <main>
-  <h1>Het binaire stelsel</h1>
-  <p>Wij gebruiken meestal de cijfers 0 tot en met 9.
-     Het binaire stelsel gebruikt alleen 0 en 1.
-     Computers gebruiken dit om informatie voor te stellen.</p>
-
-  <h2>Bits en bytes</h2>
-  <p>Een bit kan een 0 of een 1 zijn.
-     Acht bits vormen samen één byte.
-     Met acht bits kun je 256 verschillende combinaties maken.</p>
-
-  <h2>Hoe reken je binair?</h2>
-  <p>De plaatswaarden zijn van rechts naar links:
-     1, 2, 4, 8, 16, 32, 64 en 128.
-     Je telt alleen de waarden mee waar een 1 staat.</p>
-
-  <!-- Een tabel zet de plaatswaarden netjes naast elkaar. -->
-  <table>
-    <tr>
-      <th>Plaatswaarde</th>
-      <th>8</th><th>4</th><th>2</th><th>1</th>
-    </tr>
-    <tr>
-      <th>Bit</th>
-      <td>1</td><td>1</td><td>0</td><td>1</td>
-    </tr>
-  </table>
-
-  <p>Dus 1101 is: 8 + 4 + 0 + 1 = <strong>13</strong>.</p>
-
-  <h2>Binary Bonanza</h2>
-  <p>Met dit spel oefen je binaire getallen.
-     Klik op de afbeelding om het spel te openen.</p>
-
-  <!-- De afbeelding is klikbaar doordat hij binnen een link staat. -->
-  <a href="https://games.penjee.com/binary-bonanza/" target="_blank">
+  <section class="intro">
+    <div>
+      <p class="label">02 / HET BINAIRE STELSEL</p>
+      <h1>Alleen 0 en 1.<br><span>Toch heel veel.</span></h1>
+      <p>Computers stellen informatie voor met bits.
+         Met combinaties van nullen en enen kun je getallen,
+         tekst, afbeeldingen en geluid vastleggen.</p>
+      <a class="knop" href="#bitlab">Probeer het bitlab →</a>
+    </div>
     <img src="https://img.youtube.com/vi/USCBCmwMCDA/hqdefault.jpg"
-         alt="Klik hier om Binary Bonanza te spelen">
-  </a>
+         alt="Voorbeeldafbeelding van de video Binary en Data">
+  </section>
 
-  <h2>Video: Binary &amp; Data</h2>
-  <iframe src="https://www.youtube-nocookie.com/embed/USCBCmwMCDA"
-          title="Uitleg over binaire getallen en gegevens"
-          allowfullscreen></iframe>
+  <h2>De basis in drie kaarten</h2>
+  <section class="rij">
+    <article class="kaart">
+      <p class="nummer">01</p>
+      <h3>Een bit</h3>
+      <p>Een bit kan twee waarden hebben: 0 of 1.
+         Die kunnen bijvoorbeeld worden weergegeven
+         met twee verschillende elektrische spanningen.</p>
+    </article>
+    <article class="kaart">
+      <p class="nummer">08</p>
+      <h3>Een byte</h3>
+      <p>Acht bits vormen één byte.
+         Daarmee kun je 256 verschillende combinaties maken.</p>
+    </article>
+    <article class="kaart">
+      <p class="nummer">×2</p>
+      <h3>Plaatswaarden</h3>
+      <p>Van rechts naar links: 1, 2, 4, 8, 16, 32, 64 en 128.
+         Elke stap naar links verdubbelt de waarde.</p>
+    </article>
+  </section>
 
-  <p>Ik heb deze video toegevoegd omdat hij laat zien hoe computers
-     nullen en enen gebruiken. Ook legt hij uit dat tekst,
-     afbeeldingen en geluid met getallen kunnen worden opgeslagen.</p>
+  <!-- De knoppen houden dezelfde namen voor het bestaande script. -->
+  <h2 id="bitlab">Het bitlab</h2>
+  <section class="kaart">
+    <p class="label">KLIK · TEL · ONTDEK</p>
+    <h3>Welk getal maak jij?</h3>
+    <p>Zet een bit aan door erop te klikken.
+       Het kleine getal geeft de plaatswaarde aan.
+       De computer telt de ingeschakelde waarden op.</p>
+
+    <div class="bits">
+      <button class="bit" data-waarde="128" aria-pressed="false">
+        <small>128</small><strong>0</strong>
+      </button>
+      <button class="bit" data-waarde="64" aria-pressed="false">
+        <small>64</small><strong>0</strong>
+      </button>
+      <button class="bit" data-waarde="32" aria-pressed="false">
+        <small>32</small><strong>0</strong>
+      </button>
+      <button class="bit" data-waarde="16" aria-pressed="false">
+        <small>16</small><strong>0</strong>
+      </button>
+      <button class="bit" data-waarde="8" aria-pressed="false">
+        <small>8</small><strong>0</strong>
+      </button>
+      <button class="bit" data-waarde="4" aria-pressed="false">
+        <small>4</small><strong>0</strong>
+      </button>
+      <button class="bit" data-waarde="2" aria-pressed="false">
+        <small>2</small><strong>0</strong>
+      </button>
+      <button class="bit" data-waarde="1" aria-pressed="false">
+        <small>1</small><strong>0</strong>
+      </button>
+    </div>
+
+    <p class="resultaat" aria-live="polite">
+      Jouw decimale getal: <strong id="totaal">0</strong>
+    </p>
+  </section>
+
+  <h2>Drie uitdagingen</h2>
+  <section class="rij">
+    <article class="kaart">
+      <p class="label">LEVEL 1</p>
+      <h3>Maak 13</h3>
+      <details>
+        <summary>Bekijk de oplossing</summary>
+        <p>8 + 4 + 1 = 13.<br>Binair: 00001101.</p>
+      </details>
+    </article>
+    <article class="kaart">
+      <p class="label">LEVEL 2</p>
+      <h3>Maak 22</h3>
+      <details>
+        <summary>Bekijk de oplossing</summary>
+        <p>16 + 4 + 2 = 22.<br>Binair: 00010110.</p>
+      </details>
+    </article>
+    <article class="kaart">
+      <p class="label">LEVEL 3</p>
+      <h3>Zet alles aan</h3>
+      <details>
+        <summary>Welk getal krijg je?</summary>
+        <p>128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255.
+           Dat is het grootste niet-negatieve gehele getal
+           dat je met acht bits kunt voorstellen.</p>
+      </details>
+    </article>
+  </section>
+
+  <section class="banner">
+    <p class="label">VERDER SPELEN</p>
+    <h2>Binary Bonanza</h2>
+    <p>Zoek de binaire getallen die bij de gegeven decimale
+       getallen horen. Klik op de afbeelding om te beginnen.</p>
+
+    <!-- De afbeelding staat binnen een link naar het spel. -->
+    <a href="https://games.penjee.com/binary-bonanza/"
+       target="_blank" rel="noopener">
+      <img class="spelplaat"
+           src="https://img.youtube.com/vi/USCBCmwMCDA/hqdefault.jpg"
+           alt="Klik om Binary Bonanza te openen">
+    </a>
+  </section>
+
+  <section class="video">
+    <iframe src="https://www.youtube-nocookie.com/embed/USCBCmwMCDA"
+            title="How Computers Work: Binary and Data"
+            loading="lazy" allowfullscreen></iframe>
+    <div>
+      <p class="label">KIJK VERDER</p>
+      <h2>Een wereld van bits</h2>
+      <p>Ik heb deze video toegevoegd omdat hij laat zien
+         hoe getallen, tekst, afbeeldingen en geluid met
+         nullen en enen kunnen worden voorgesteld.</p>
+      <a href="https://www.youtube.com/watch?v=USCBCmwMCDA"
+         target="_blank" rel="noopener">Bekijk op YouTube →</a>
+    </div>
+  </section>
 </main>
 
-<footer>Sahel | Havo 4 | Informatica</footer>
-
+<footer>Sahel · Havo 4 · Informatica</footer>
 </body>
 </html>

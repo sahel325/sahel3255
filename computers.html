@@ -8,58 +8,132 @@
 </head>
 <body>
 
-<!-- Via het menu open je een ander HTML-bestand. -->
 <header>
-  <h2>Sahel's website</h2>
+  <a class="logo" href="index.html">SAHEL<span>.ONLINE</span></a>
   <nav>
     <a href="index.html">Home</a>
-    <a href="computers.html">Computers</a>
-    <a href="binair.html">Binair</a>
-    <a href="kleuren.html">Kleuren</a>
-    <a href="ai.html">AI</a>
+    <details class="dropdown">
+      <summary>Ontdekken ▾</summary>
+      <div class="dropdown-links">
+        <a href="computers.html">💻 Computers</a>
+        <a href="binair.html">🔢 Binair stelsel</a>
+        <a href="kleuren.html">🎨 Kleurenlab</a>
+        <a href="ai.html">✨ Kunstmatige intelligentie</a>
+      </div>
+    </details>
   </nav>
 </header>
 
 <main>
-  <h1>Hoe werkt een computer?</h1>
+  <section class="intro">
+    <div>
+      <p class="label">01 / COMPUTERS</p>
+      <h1>Jij klikt.<br><span>Wat gebeurt er?</span></h1>
+      <p>Achter iedere klik zitten opdrachten en berekeningen.
+         Ontdek hoe een computer van gegevens een resultaat maakt.</p>
+      <a class="knop" href="#stappen">Ontdek de drie stappen →</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900"
+         alt="Elektronische onderdelen op een printplaat">
+  </section>
 
-  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
-       alt="Elektronische onderdelen op een printplaat">
+  <!-- De drie kaarten leggen het proces in volgorde uit. -->
+  <h2 id="stappen">Van invoer naar uitvoer</h2>
+  <section class="rij">
+    <article class="kaart">
+      <p class="nummer">01</p>
+      <h3>Invoer</h3>
+      <p>De computer krijgt gegevens binnen. Jij typt iets,
+         beweegt je muis of praat in een microfoon.
+         Een sensor kan ook automatisch informatie doorgeven.</p>
+      <p><strong>Voorbeeld:</strong> je drukt op een toets.</p>
+    </article>
+    <article class="kaart">
+      <p class="nummer">02</p>
+      <h3>Verwerking</h3>
+      <p>De processor voert instructies van een programma uit.
+         Hij gebruikt gegevens uit het werkgeheugen om
+         bijvoorbeeld te rekenen of iets te vergelijken.</p>
+      <p><strong>Voorbeeld:</strong> de game berekent een sprong.</p>
+    </article>
+    <article class="kaart">
+      <p class="nummer">03</p>
+      <h3>Uitvoer</h3>
+      <p>De computer geeft een resultaat. Dat kan beeld,
+         geluid of een afgedrukte pagina zijn.</p>
+      <p><strong>Voorbeeld:</strong> je personage springt op je scherm.</p>
+    </article>
+  </section>
 
-  <h2>Invoer</h2>
-  <p>Invoer is informatie die een computer binnenkrijgt.
-     Voorbeelden zijn typen op een toetsenbord, klikken met een
-     muis en praten in een microfoon.</p>
+  <section class="banner">
+    <p class="label">HERKENBAAR VOORBEELD</p>
+    <h2>Een berichtje sturen</h2>
+    <p><strong>Invoer:</strong> je typt een bericht op je telefoon.</p>
+    <p><strong>Verwerking:</strong> de app verwerkt de tekst
+       en de opdracht om het bericht te verzenden.</p>
+    <p><strong>Uitvoer:</strong> de ontvanger ziet het bericht
+       op het scherm en hoort misschien een melding.</p>
+  </section>
 
-  <h2>Verwerking</h2>
-  <p>De processor voert de instructies van een programma uit.
-     Hij kan bijvoorbeeld rekenen of gegevens vergelijken.
-     Daarbij gebruikt hij het werkgeheugen.</p>
+  <h2>Wat zit er in een computer?</h2>
+  <section class="rij">
+    <article class="kaart">
+      <p class="icoon">⚙️</p>
+      <h3>Processor: CPU</h3>
+      <p>Voert de instructies van programma's uit.
+         Bijvoorbeeld berekeningen en vergelijkingen.</p>
+    </article>
+    <article class="kaart">
+      <p class="icoon">🧩</p>
+      <h3>Werkgeheugen: RAM</h3>
+      <p>Bewaart tijdelijk informatie die programma's nodig
+         hebben. Gewoon RAM verliest die gegevens
+         wanneer de stroom uitgaat.</p>
+    </article>
+    <article class="kaart">
+      <p class="icoon">💾</p>
+      <h3>Opslag: SSD</h3>
+      <p>Bewaart bijvoorbeeld bestanden en programma's.
+         Die blijven staan als je de computer uitzet.</p>
+    </article>
+  </section>
 
-  <h2>Uitvoer</h2>
-  <p>Uitvoer is het resultaat dat de computer geeft.
-     Bijvoorbeeld een afbeelding op je scherm,
-     geluid uit een speaker of tekst uit een printer.</p>
+  <h2>Test jezelf</h2>
+  <!-- details maakt een antwoord dat je kunt uitklappen. -->
+  <details>
+    <summary>Is een touchscreen invoer of uitvoer?</summary>
+    <p>Allebei. Het registreren van je aanraking is invoer.
+       Het tonen van een afbeelding is uitvoer.</p>
+  </details>
+  <details>
+    <summary>Is een telefoon ook een computer?</summary>
+    <p>Ja. Een telefoon ontvangt gegevens, verwerkt ze,
+       bewaart informatie en geeft resultaten terug.</p>
+  </details>
+  <details>
+    <summary>Wat is het verschil tussen hardware en software?</summary>
+    <p>Hardware zijn de fysieke onderdelen, zoals het scherm
+       en de processor. Software bestaat uit programma's
+       en instructies die de hardware aansturen.</p>
+  </details>
 
-  <h2>Voorbeeld: een game</h2>
-  <ul>
-    <li>Invoer: ik druk op de spatiebalk.</li>
-    <li>Verwerking: de computer berekent de sprong.</li>
-    <li>Uitvoer: ik zie mijn personage springen.</li>
-  </ul>
-
-  <!-- Hieronder staat een video over dit onderwerp. -->
-  <h2>Video: How Computers Work</h2>
-  <iframe src="https://www.youtube-nocookie.com/embed/mCq8-xTH7jA"
-          title="Wat maakt een computer een computer?"
-          allowfullscreen></iframe>
-
-  <p>Ik heb deze video toegevoegd omdat hij invoer, verwerking,
-     geheugen en uitvoer uitlegt. De voorbeelden maken duidelijk
-     hoe deze onderdelen samenwerken.</p>
+  <section class="video">
+    <iframe src="https://www.youtube-nocookie.com/embed/mCq8-xTH7jA"
+            title="What Makes a Computer, a Computer?"
+            loading="lazy" allowfullscreen></iframe>
+    <div>
+      <p class="label">KIJK VERDER</p>
+      <h2>Wat maakt iets een computer?</h2>
+      <p>Ik heb deze video toegevoegd omdat hij invoer,
+         verwerking, geheugen en uitvoer uitlegt.
+         Je ziet dat verschillende apparaten dezelfde
+         basisfuncties hebben.</p>
+      <a href="https://www.youtube.com/watch?v=mCq8-xTH7jA"
+         target="_blank" rel="noopener">Bekijk op YouTube →</a>
+    </div>
+  </section>
 </main>
 
-<footer>Sahel | Havo 4 | Informatica</footer>
-
+<footer>Sahel · Havo 4 · Informatica</footer>
 </body>
 </html>

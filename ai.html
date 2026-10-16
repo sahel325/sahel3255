@@ -8,69 +8,157 @@
 </head>
 <body>
 
+<!-- Het dropdownmenu is op iedere pagina hetzelfde. -->
 <header>
-  <h2>Sahel's website</h2>
+  <a class="logo" href="index.html">SAHEL<span>.ONLINE</span></a>
   <nav>
     <a href="index.html">Home</a>
-    <a href="computers.html">Computers</a>
-    <a href="binair.html">Binair</a>
-    <a href="kleuren.html">Kleuren</a>
-    <a href="ai.html">AI</a>
+    <details class="dropdown">
+      <summary>Ontdekken ▾</summary>
+      <div class="dropdown-links">
+        <a href="computers.html">💻 Computers</a>
+        <a href="binair.html">🔢 Binair stelsel</a>
+        <a href="kleuren.html">🎨 Kleurenlab</a>
+        <a href="ai.html">✨ Kunstmatige intelligentie</a>
+      </div>
+    </details>
   </nav>
 </header>
 
 <main>
-  <h1>AI in mijn dagelijks leven</h1>
+  <!-- Het openingsvlak introduceert het onderwerp. -->
+  <section class="intro">
+    <div>
+      <p class="label">04 / KUNSTMATIGE INTELLIGENTIE</p>
+      <h1>Slimme hulp.<br><span>Jouw verstand.</span></h1>
+      <p>Een samenvatting voor school, een foto bewerken of een
+         vraag stellen: AI zit op steeds meer plekken.</p>
+      <a class="knop" href="#mijn-ai">Zo gebruik ik AI →</a>
+    </div>
+    <img src="https://img.youtube.com/vi/KHbwOetbmbs/hqdefault.jpg"
+         alt="Voorbeeldafbeelding van de video over machine learning">
+  </section>
 
-  <img src="https://img.youtube.com/vi/KHbwOetbmbs/hqdefault.jpg"
-       alt="Voorbeeldafbeelding van de video over machine learning">
+  <h2>Wat zit erachter?</h2>
+  <section class="rij">
+    <article class="kaart">
+      <p class="label">🧠 / AI</p>
+      <h3>Kunstmatige intelligentie</h3>
+      <p>AI is de verzamelnaam voor computersystemen die taken
+         uitvoeren zoals teksten maken, patronen herkennen
+         en voorspellingen doen.</p>
+    </article>
+    <article class="kaart">
+      <p class="label">📊 / LEREN</p>
+      <h3>Voorbeelden herkennen</h3>
+      <p>Veel AI gebruikt machine learning. Een model wordt
+         getraind met voorbeelden en leert daar patronen uit.
+         Die gebruikt het bij nieuwe gegevens.</p>
+    </article>
+    <article class="kaart">
+      <p class="label">⚠️ / CONTROLEREN</p>
+      <h3>Niet altijd juist</h3>
+      <p>Een antwoord kan heel overtuigend klinken en toch
+         fout zijn. Daarom moet je belangrijke informatie
+         blijven controleren.</p>
+    </article>
+  </section>
 
-  <h2>Wat is AI?</h2>
-  <p>AI betekent kunstmatige intelligentie.
-     Computersystemen kunnen hiermee bijvoorbeeld patronen
-     herkennen, teksten maken en voorspellingen doen.
-     Veel AI leert patronen uit voorbeelden.</p>
+  <h2 id="mijn-ai">AI in mijn dagelijks leven</h2>
+  <section class="rij">
+    <article class="kaart">
+      <p class="nummer">01</p>
+      <h3>Schoolstof samenvatten</h3>
+      <p>Ik gebruik AI voor samenvattingen van schoolstof.
+         Dat helpt om de belangrijkste punten bij elkaar te zetten.</p>
+    </article>
+    <article class="kaart">
+      <p class="nummer">02</p>
+      <h3>Moeilijke uitleg</h3>
+      <p>Als ik iets lastig vind, kan ik vragen om eenvoudigere
+         woorden of een voorbeeld. Ook kan ik doorvragen.</p>
+    </article>
+    <article class="kaart">
+      <p class="nummer">03</p>
+      <h3>Dagelijkse vragen</h3>
+      <p>Ik gebruik AI ook voor vragen over dingen die ik
+         tegenkom in het dagelijks leven.</p>
+    </article>
+  </section>
 
-  <h2>Waar gebruik ik AI voor?</h2>
-  <p>Ik gebruik AI voor samenvattingen van schoolstof.
-     Ook stel ik vragen over dingen uit het dagelijks leven.
-     Als een onderwerp lastig is, kan ik om een simpelere
-     uitleg of een voorbeeld vragen.</p>
+  <!-- Een opvallend vlak benadrukt mijn reflectie. -->
+  <section class="banner">
+    <p class="label">DE BELANGRIJKSTE VRAAG</p>
+    <h2>Leer ik er zelf iets van?</h2>
+    <p>AI helpt vooral als ik de uitleg daarna zelf begrijp.
+       Alleen een antwoord kopiëren helpt minder.
+       Een goede controle is om het onderwerp zonder hulp
+       in mijn eigen woorden uit te leggen.</p>
+  </section>
 
-  <h2>Leer ik er iets van?</h2>
-  <p>Een duidelijke uitleg kan mij helpen om de stof te begrijpen.
-     Daarna moet ik wel zelf controleren of ik het kan uitleggen.
-     Alleen een antwoord overnemen helpt minder.
-     AI kan ook fouten maken, dus ik controleer belangrijke informatie.</p>
+  <h2>Mijn iPhone 17: meer dan een telefoon</h2>
+  <p>Mijn telefoon ondersteunt Apple Intelligence. Welke functies
+     beschikbaar zijn, hangt onder andere af van de software,
+     de taal en de regio.</p>
 
-  <h2>AI in mijn iPhone 17</h2>
-  <p>Ik heb een iPhone 17. Deze ondersteunt Apple Intelligence.
-     Voorbeelden van slimme functies zijn:</p>
+  <section class="rij">
+    <article class="kaart">
+      <p class="icoon">✍️</p>
+      <h3>Schrijfhulp</h3>
+      <p>Kan teksten verbeteren, herschrijven en samenvatten.
+         Bijvoorbeeld als je een lange tekst korter wilt maken.</p>
+    </article>
+    <article class="kaart">
+      <p class="icoon">📷</p>
+      <h3>Ruim Op</h3>
+      <p>Kan storende onderdelen uit foto's verwijderen.
+         AI probeert het gedeelte dat overblijft passend
+         op te vullen.</p>
+    </article>
+    <article class="kaart">
+      <p class="icoon">📱</p>
+      <h3>Center Stage</h3>
+      <p>Kan de kadrering bij videogesprekken automatisch
+         aanpassen, zodat je in beeld blijft.</p>
+    </article>
+  </section>
 
-  <!-- Een lijst maakt de voorbeelden overzichtelijk. -->
-  <ul>
-    <li>Schrijfhulp om teksten te verbeteren of samen te vatten.</li>
-    <li>Ruim Op om storende onderdelen uit foto's te verwijderen.</li>
-    <li>Automatische kadrering bij videogesprekken.</li>
-  </ul>
+  <!-- De bezoeker kan zelf extra uitleg openen. -->
+  <h2>Even nadenken</h2>
+  <details>
+    <summary>Een chatbot geeft een bron. Kun je die meteen vertrouwen?</summary>
+    <p>Nee. Een chatbot kan een bron verkeerd noemen of zelfs
+       verzinnen. Open de bron en controleer of die echt bestaat
+       en de informatie ondersteunt.</p>
+  </details>
+  <details>
+    <summary>Waarom zijn privégegevens belangrijk?</summary>
+    <p>Wat je invoert, wordt verwerkt door de dienst die je gebruikt.
+       Deel daarom niet zomaar wachtwoorden, adressen
+       of andere gevoelige informatie.</p>
+  </details>
 
-  <p>De beschikbaarheid hangt af van onder andere
-     de softwareversie, taal en regio.</p>
+  <section class="video">
+    <iframe src="https://www.youtube-nocookie.com/embed/KHbwOetbmbs"
+            title="What is Machine Learning?"
+            loading="lazy" allowfullscreen></iframe>
+    <div>
+      <p class="label">KIJK VERDER</p>
+      <h2>Hoe leert AI?</h2>
+      <p>Ik heb deze video toegevoegd omdat hij uitlegt hoe
+         computers patronen leren herkennen. Dat maakt
+         duidelijker hoe veel AI-toepassingen werken.</p>
+      <a href="https://www.youtube.com/watch?v=KHbwOetbmbs"
+         target="_blank" rel="noopener">Bekijk op YouTube →</a>
+    </div>
+  </section>
 
-  <h2>Video: wat is machine learning?</h2>
-  <iframe src="https://www.youtube-nocookie.com/embed/KHbwOetbmbs"
-          title="Wat is machine learning?"
-          allowfullscreen></iframe>
-
-  <p>Ik heb deze video toegevoegd omdat hij uitlegt hoe computers
-     patronen leren herkennen uit voorbeelden.
-     Daardoor begrijp je beter hoe veel AI-toepassingen werken.</p>
-
-  <p>Bron: <a href="https://www.apple.com/nl/iphone-17/">
-    Apple: iPhone 17</a>.</p>
+  <p class="klein">Bron telefoonfuncties:
+    <a href="https://www.apple.com/nl/iphone-17/"
+       target="_blank" rel="noopener">Apple: iPhone 17</a>.
+  </p>
 </main>
 
-<footer>Sahel | Havo 4 | Informatica</footer>
-
+<footer>Sahel · Havo 4 · Informatica</footer>
 </body>
 </html>
