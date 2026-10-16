@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kleurmodellen - Sahel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Informatica</h1>
+    <p>Mijn website over computers en technologie | Sahel, havo 4</p>
+  </header>
+
+  <div class="indeling">
+
+    <nav aria-label="Menu">
+      <h3>Onderwerpen</h3>
+      <a href="index.html">Over mij</a>
+      <a href="computers.html">Hoe werkt een computer?</a>
+      <a href="binair.html">Binaire getallen</a>
+      <a href="kleuren.html">RGB en CMYK</a>
+      <a href="ai.html">AI in mijn leven</a>
+    </nav>
+
+    <main>
+      <section>
+        <h2>RGB en CMYK</h2>
+
+        <p>
+          Een scherm maakt kleuren op een andere manier dan
+          een printer. Bij schermen gebruik je RGB en bij
+          vierkleurendruk gebruik je CMYK.
+        </p>
+
+        <h3>RGB: kleuren met licht</h3>
+
+        <p>
+          RGB staat voor rood, groen en blauw.
+          Een beeldscherm mengt deze kleuren licht.
+          Dat gebeurt bijvoorbeeld op mijn telefoon
+          en op een computerscherm.
+        </p>
+
+        <p>
+          Bij 8 bits per kleurkanaal heeft elke kleur
+          een waarde van 0 tot 255. Alles op 0 geeft zwart.
+          Alles op 255 geeft wit.
+          Kleuren maken door licht toe te voegen
+          heet additief mengen.
+        </p>
+
+        <svg class="afbeelding" viewBox="0 0 500 100"
+             role="img" aria-label="Rood, groen en blauw">
+          <rect x="0" y="0" width="160" height="100" fill="#ff0000"/>
+          <rect x="170" y="0" width="160" height="100" fill="#00ff00"/>
+          <rect x="340" y="0" width="160" height="100" fill="#0000ff"/>
+        </svg>
+
+        <h3>CMYK: kleuren met inkt</h3>
+
+        <p>
+          CMYK staat voor cyaan, magenta, geel en zwart.
+          Deze kleuren worden gebruikt bij drukwerk.
+          De inkt neemt een deel van het licht op.
+          Dit heet subtractief mengen.
+          Zonder inkt zie je de kleur van het papier.
+        </p>
+
+        <svg class="afbeelding" viewBox="0 0 500 100"
+             role="img" aria-label="Cyaan, magenta, geel en zwart">
+          <rect x="0" y="0" width="117" height="100" fill="#00ffff"/>
+          <rect x="127" y="0" width="117" height="100" fill="#ff00ff"/>
+          <rect x="254" y="0" width="117" height="100" fill="#ffff00"/>
+          <rect x="381" y="0" width="119" height="100" fill="#000000"/>
+        </svg>
+
+        <p class="voorbeeld">
+          Een foto kan er op je telefoon anders uitzien dan
+          op papier. Een printer kan niet alle kleuren van
+          een scherm precies namaken.
+        </p>
+
+        <h3>Kleuren in mijn code</h3>
+
+        <p>
+          Voor deze website gebruik ik kleurcodes in CSS.
+          Met <code>background-color</code> stel ik een
+          achtergrondkleur in. De code <code>#254666</code>
+          is bijvoorbeeld het blauw bovenaan mijn website.
+        </p>
+
+        <h3>Video over het verschil</h3>
+
+        <p>
+          In deze video worden RGB en CMYK met elkaar vergeleken.
+        </p>
+
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/NrISnJ4iwNg"
+          title="RGB en CMYK uitgelegd"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+
+        <p>
+          Bron:
+          <a href="https://helpx.adobe.com/nl/creative-cloud/apps/colors/understand-color-modes.html">
+            Adobe: informatie over kleurmodellen
+          </a>
+        </p>
+      </section>
+    </main>
+
+  </div>
+
+  <footer>
+    Sahel | Havo 4 | Informatica
+  </footer>
+
+</body>
+</html>
