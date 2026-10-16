@@ -1,96 +1,88 @@
-/* Basisopmaak van de hele website. */
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background: #eeebff;
-  color: #252540;
-  line-height: 1.7;
+  background: #e8e8e8;
+  color: #222;
+  margin: 0;
+  line-height: 1.6;
 }
-
-/* Donkere bovenbalk met het menu. */
-header {
-  background: #252540;
+header, footer {
+  background: #254666;
   color: white;
-  text-align: center;
   padding: 20px;
 }
-
-header h2 {
-  margin: 0 0 15px;
+header h1, header p {
+  margin: 0;
 }
-
-/* Het menu loopt op kleine schermen door naar de volgende regel. */
-nav {
+footer {
+  text-align: center;
+}
+.indeling {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  max-width: 1150px;
+  margin: auto;
 }
-
+nav {
+  width: 190px;
+  padding: 20px;
+  flex-shrink: 0;
+}
 nav a {
-  color: white;
-  background: #6552df;
-  padding: 8px 15px;
-  border-radius: 8px;
+  display: block;
+  background: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
   text-decoration: none;
 }
-
-/* De kleur verandert als je over een menulink beweegt. */
 nav a:hover {
-  background: #4935b8;
+  background: #d8e5f0;
 }
-
-/* Wit inhoudsvlak in het midden. */
 main {
-  max-width: 850px;
-  margin: 30px auto;
-  padding: 25px;
+  flex: 1;
+  min-width: 0;
+  padding: 20px;
+}
+section {
   background: white;
-  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
 }
-
-h1, h2 {
-  color: #6552df;
+h2, a {
+  color: #254666;
 }
-
-header h2 {
-  color: white;
+h2 {
+  border-bottom: 2px solid #254666;
 }
-
-/* Afbeeldingen passen binnen het inhoudsvlak. */
-img {
+.geel, .voorbeeld {
+  background: #fff2a8;
+  padding: 15px;
+}
+.voorbeeld, th {
+  background: #e8eff5;
+}
+.afbeelding {
+  display: block;
   width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 12px;
+  max-width: 500px;
+  margin: 20px auto;
 }
-
-/* De video blijft netjes in verhouding. */
-iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-  border-radius: 12px;
-}
-
-/* Opmaak van de tabellen. */
 table {
   width: 100%;
   border-collapse: collapse;
 }
-
 th, td {
-  padding: 12px;
-  border: 1px solid #d5cfff;
+  border: 1px solid #999;
+  padding: 10px;
   text-align: center;
 }
-
-th {
-  background: #eeebff;
+iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
 }
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #6552df;
+@media (max-width: 700px) {
+  .indeling { display: block; }
+  nav { width: auto; }
+  nav a { display: inline-block; }
 }
