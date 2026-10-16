@@ -1,55 +1,88 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sahel | Home</title>
-  <!-- Dit bestand bepaalt de opmaak. -->
+  <!-- Koppeling naar de opmaak van de website. -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Hetzelfde menu staat op iedere pagina. -->
+<!-- Bovenbalk met de naam en het dropdownmenu. -->
 <header>
-  <h2>Sahel's website</h2>
+  <a class="logo" href="index.html">SAHEL<span>.ONLINE</span></a>
   <nav>
     <a href="index.html">Home</a>
-    <a href="computers.html">Computers</a>
-    <a href="binair.html">Binair</a>
-    <a href="kleuren.html">Kleuren</a>
-    <a href="ai.html">AI</a>
+
+    <!-- Klik op summary om de links te openen of te sluiten. -->
+    <details class="dropdown">
+      <summary>Ontdekken ▾</summary>
+      <div class="dropdown-links">
+        <a href="computers.html">💻 Computers</a>
+        <a href="binair.html">🔢 Binair stelsel</a>
+        <a href="kleuren.html">🎨 Kleurenlab</a>
+        <a href="ai.html">✨ Kunstmatige intelligentie</a>
+      </div>
+    </details>
   </nav>
 </header>
 
-<!-- Hier staat de inhoud van de pagina. -->
+<!-- Hier begint de hoofdinhoud. -->
 <main>
-  <h1>Welkom op mijn website!</h1>
-  <p>Ik ben Sahel, ik ben 15 jaar en ik zit in havo 4.
-     Mijn favoriete vak is informatica.</p>
+  <section class="intro">
+    <div>
+      <p class="label">HAVO 4 · INFORMATICA</p>
+      <h1>Mijn wereld.<br><span>Mijn website.</span></h1>
+      <p>Hoi! Ik ben Sahel, ik ben 15 jaar en zit in havo 4.
+         Mijn favoriete vak is informatica.</p>
+      <p>Ontdek hoe computers werken, probeer binaire getallen
+         en maak je eigen kleur in het kleurenlab.</p>
+      <a class="knop" href="kleuren.html">Probeer het kleurenlab →</a>
+    </div>
 
-  <h2>Mijn hobby's</h2>
-  <p>Ik ga graag naar de gym en ik voetbal graag.
-     Mijn favoriete voetbalclub is Real Madrid.</p>
+    <!-- De foto wordt rechtstreeks van internet geladen. -->
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900"
+         alt="Een sportschool met fitnessapparaten">
+  </section>
 
-  <img src="gym1.jpg.webp" alt="">
-  
+  <h2>Dit ben ik</h2>
 
-  <h2>Over deze website</h2>
-  <p>Hier lees je over computers, het binaire stelsel,
-     kleurmodellen en AI. Gebruik het menu om verder te kijken.</p>
+  <!-- Drie kaarten met dezelfde opmaak. -->
+  <section class="rij">
+    <article class="kaart">
+      <h3>🏋️ Naar de gym</h3>
+      <p>Ik ga graag naar de gym om te trainen en sterker te worden.</p>
+    </article>
 
-  <!-- Een iframe plaatst een YouTube-video op de site. -->
-  <h2>Video: hoe werken computers?</h2>
-  <iframe src="https://www.youtube-nocookie.com/embed/OAx_6-wdslM"
-          title="Introductie: hoe werken computers?"
-          allowfullscreen></iframe>
+    <article class="kaart">
+      <h3>⚽ Voetbal</h3>
+      <p>Ik voetbal graag. Mijn favoriete voetbalclub is Real Madrid.</p>
+    </article>
 
-  <p>Ik heb deze video toegevoegd omdat hij een korte introductie
-     geeft over computers. Dat past bij mijn interesse in informatica
-     en de onderwerpen van mijn website.</p>
+    <article class="kaart">
+      <h3>💻 Informatica</h3>
+      <p>Ik leer graag over computers en hoe je een website maakt.</p>
+    </article>
+  </section>
+
+  <!-- Een video met uitleg waarom hij bij de pagina past. -->
+  <section class="video">
+    <iframe src="https://www.youtube-nocookie.com/embed/OAx_6-wdslM"
+            title="Introductie: hoe werken computers?"
+            allowfullscreen></iframe>
+    <div>
+      <p class="label">KIJK VERDER</p>
+      <h2>Achter het scherm</h2>
+      <p>Ik heb deze korte video toegevoegd omdat hij introduceert
+         hoe computers werken. Dat past bij mijn favoriete vak
+         en de onderwerpen op mijn website.</p>
+    </div>
+  </section>
 </main>
 
-<footer>Sahel | Havo 4 | Informatica</footer>
+<!-- Onderste gedeelte van de pagina. -->
+<footer>Sahel · Havo 4 · Informatica</footer>
 
 </body>
 </html>
