@@ -5,11 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sahel | Binair</title>
   <link rel="stylesheet" href="style.css">
-  <!-- JavaScript maakt de binaire knoppen interactief. -->
-  <script src="script.js" defer></script>
+
+  <!-- Extra opmaak voor duidelijke bitknoppen. -->
+  <style>
+    #bitknoppen {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 25px 0;
+    }
+    #bitknoppen button {
+      flex: 1 1 70px;
+      background: #eee9ff;
+      border: 2px solid #cfc3f1;
+      padding: 12px;
+    }
+    #bitknoppen small {
+      display: block;
+      color: #40316b;
+    }
+    #bitknoppen strong {
+      display: block;
+      font-size: 32px;
+    }
+    #bitknoppen button.aan {
+      background: #a1f3df;
+      border-color: #31866c;
+    }
+    .uitkomst {
+      background: #f0ecff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    #binairGetal {
+      font-family: monospace;
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
+  </style>
 </head>
 <body>
 
+<!-- Menu met links naar de andere pagina's. -->
 <header>
   <a class="logo" href="index.html">SAHEL<span>.ONLINE</span></a>
   <nav>
@@ -30,141 +68,180 @@
   <section class="intro">
     <div>
       <p class="label">02 / HET BINAIRE STELSEL</p>
-      <h1>Alleen 0 en 1.<br><span>Toch heel veel.</span></h1>
-      <p>Computers stellen informatie voor met bits.
-         Met combinaties van nullen en enen kun je getallen,
-         tekst, afbeeldingen en geluid vastleggen.</p>
-      <a class="knop" href="#bitlab">Probeer het bitlab →</a>
+      <h1>Klik op een bit.<br><span>Maak een getal.</span></h1>
+      <p>Een computer gebruikt bits: nullen en enen.
+         Hieronder kun je zelf ontdekken hoe je daarmee rekent.</p>
+      <a class="knop" href="#oefenen">Zelf proberen →</a>
     </div>
     <img src="https://img.youtube.com/vi/USCBCmwMCDA/hqdefault.jpg"
-         alt="Voorbeeldafbeelding van de video Binary en Data">
+         alt="Voorbeeldafbeelding van de video over binaire gegevens">
   </section>
 
-  <h2>De basis in drie kaarten</h2>
+  <h2>Hoe werkt binair?</h2>
   <section class="rij">
     <article class="kaart">
-      <p class="nummer">01</p>
-      <h3>Een bit</h3>
-      <p>Een bit kan twee waarden hebben: 0 of 1.
-         Die kunnen bijvoorbeeld worden weergegeven
-         met twee verschillende elektrische spanningen.</p>
+      <h3>Een bit is 0 of 1</h3>
+      <p>Een bit heeft twee mogelijke waarden.
+         In deze oefening betekent 0: niet meetellen.
+         Een 1 betekent: wel meetellen.</p>
     </article>
     <article class="kaart">
-      <p class="nummer">08</p>
-      <h3>Een byte</h3>
-      <p>Acht bits vormen één byte.
-         Daarmee kun je 256 verschillende combinaties maken.</p>
+      <h3>Elke plek heeft een waarde</h3>
+      <p>Van rechts naar links zijn de plaatswaarden
+         1, 2, 4, 8, 16, 32, 64 en 128.</p>
     </article>
     <article class="kaart">
-      <p class="nummer">×2</p>
-      <h3>Plaatswaarden</h3>
-      <p>Van rechts naar links: 1, 2, 4, 8, 16, 32, 64 en 128.
-         Elke stap naar links verdubbelt de waarde.</p>
+      <h3>Acht bits zijn één byte</h3>
+      <p>Met acht bits kun je 256 combinaties maken.
+         Als niet-negatieve gehele getallen zijn dat 0 tot en met 255.</p>
     </article>
   </section>
 
-  <!-- De knoppen houden dezelfde namen voor het bestaande script. -->
-  <h2 id="bitlab">Het bitlab</h2>
+  <h2 id="oefenen">Probeer het zelf</h2>
   <section class="kaart">
-    <p class="label">KLIK · TEL · ONTDEK</p>
-    <h3>Welk getal maak jij?</h3>
-    <p>Zet een bit aan door erop te klikken.
-       Het kleine getal geeft de plaatswaarde aan.
-       De computer telt de ingeschakelde waarden op.</p>
+    <p class="label">KLIK OP DE PAARSE KNOPPEN</p>
+    <h3>Maak bijvoorbeeld het getal 13</h3>
+    <p>Het kleine getal is de <strong>plaatswaarde</strong>.
+       Klik op een knop om de bit van 0 naar 1 te veranderen.
+       Een groene knop telt mee. Klik opnieuw om hem uit te zetten.</p>
 
-    <div class="bits">
-      <button class="bit" data-waarde="128" aria-pressed="false">
-        <small>128</small><strong>0</strong>
+    <!-- data-waarde bewaart de plaatswaarde van iedere knop. -->
+    <div id="bitknoppen">
+      <button data-waarde="128" onclick="schakel(this)" aria-pressed="false">
+        <small>Waarde 128</small><strong>0</strong>
       </button>
-      <button class="bit" data-waarde="64" aria-pressed="false">
-        <small>64</small><strong>0</strong>
+      <button data-waarde="64" onclick="schakel(this)" aria-pressed="false">
+        <small>Waarde 64</small><strong>0</strong>
       </button>
-      <button class="bit" data-waarde="32" aria-pressed="false">
-        <small>32</small><strong>0</strong>
+      <button data-waarde="32" onclick="schakel(this)" aria-pressed="false">
+        <small>Waarde 32</small><strong>0</strong>
       </button>
-      <button class="bit" data-waarde="16" aria-pressed="false">
-        <small>16</small><strong>0</strong>
+      <button data-waarde="16" onclick="schakel(this)" aria-pressed="false">
+        <small>Waarde 16</small><strong>0</strong>
       </button>
-      <button class="bit" data-waarde="8" aria-pressed="false">
-        <small>8</small><strong>0</strong>
+      <button data-waarde="8" onclick="schakel(this)" aria-pressed="false">
+        <small>Waarde 8</small><strong>0</strong>
       </button>
-      <button class="bit" data-waarde="4" aria-pressed="false">
-        <small>4</small><strong>0</strong>
+      <button data-waarde="4" onclick="schakel(this)" aria-pressed="false">
+        <small>Waarde 4</small><strong>0</strong>
       </button>
-      <button class="bit" data-waarde="2" aria-pressed="false">
-        <small>2</small><strong>0</strong>
+      <button data-waarde="2" onclick="schakel(this)" aria-pressed="false">
+        <small>Waarde 2</small><strong>0</strong>
       </button>
-      <button class="bit" data-waarde="1" aria-pressed="false">
-        <small>1</small><strong>0</strong>
+      <button data-waarde="1" onclick="schakel(this)" aria-pressed="false">
+        <small>Waarde 1</small><strong>0</strong>
       </button>
     </div>
 
-    <p class="resultaat" aria-live="polite">
-      Jouw decimale getal: <strong id="totaal">0</strong>
-    </p>
+    <!-- De uitkomst verandert direct na iedere klik. -->
+    <div class="uitkomst" aria-live="polite">
+      <p>Jouw binaire getal:</p>
+      <p id="binairGetal">00000000</p>
+      <p>Decimaal: <strong id="antwoord">0</strong></p>
+      <p id="berekening">Er staan nog geen bits aan.</p>
+    </div>
+
+    <button onclick="wissen()">↺ Opnieuw beginnen</button>
   </section>
 
-  <h2>Drie uitdagingen</h2>
+  <h2>Klaar voor een uitdaging?</h2>
   <section class="rij">
     <article class="kaart">
-      <p class="label">LEVEL 1</p>
       <h3>Maak 13</h3>
       <details>
         <summary>Bekijk de oplossing</summary>
-        <p>8 + 4 + 1 = 13.<br>Binair: 00001101.</p>
+        <p>Zet 8, 4 en 1 aan.<br>8 + 4 + 1 = 13.</p>
       </details>
     </article>
     <article class="kaart">
-      <p class="label">LEVEL 2</p>
       <h3>Maak 22</h3>
       <details>
         <summary>Bekijk de oplossing</summary>
-        <p>16 + 4 + 2 = 22.<br>Binair: 00010110.</p>
+        <p>Zet 16, 4 en 2 aan.<br>16 + 4 + 2 = 22.</p>
       </details>
     </article>
     <article class="kaart">
-      <p class="label">LEVEL 3</p>
-      <h3>Zet alles aan</h3>
+      <h3>Maak 255</h3>
       <details>
-        <summary>Welk getal krijg je?</summary>
-        <p>128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255.
-           Dat is het grootste niet-negatieve gehele getal
-           dat je met acht bits kunt voorstellen.</p>
+        <summary>Bekijk de oplossing</summary>
+        <p>Zet alle acht bits aan. Je krijgt 11111111.</p>
       </details>
     </article>
   </section>
 
-  <section class="banner">
-    <p class="label">VERDER SPELEN</p>
-    <h2>Binary Bonanza</h2>
-    <p>Zoek de binaire getallen die bij de gegeven decimale
-       getallen horen. Klik op de afbeelding om te beginnen.</p>
+  <h2>Verder oefenen met Binary Bonanza</h2>
+  <p>Klik op de afbeelding om het spel te openen.</p>
 
-    <!-- De afbeelding staat binnen een link naar het spel. -->
-    <a href="https://games.penjee.com/binary-bonanza/"
-       target="_blank" rel="noopener">
-      <img class="spelplaat"
-           src="https://img.youtube.com/vi/USCBCmwMCDA/hqdefault.jpg"
-           alt="Klik om Binary Bonanza te openen">
-    </a>
-  </section>
+  <!-- Een afbeelding binnen een link werkt als een grote knop. -->
+  <a href="https://games.penjee.com/binary-bonanza/"
+     target="_blank" rel="noopener">
+    <img class="spelplaat"
+         src="https://img.youtube.com/vi/USCBCmwMCDA/hqdefault.jpg"
+         alt="Open Binary Bonanza">
+  </a>
 
   <section class="video">
     <iframe src="https://www.youtube-nocookie.com/embed/USCBCmwMCDA"
             title="How Computers Work: Binary and Data"
-            loading="lazy" allowfullscreen></iframe>
+            allowfullscreen></iframe>
     <div>
       <p class="label">KIJK VERDER</p>
-      <h2>Een wereld van bits</h2>
+      <h2>Waarom nullen en enen?</h2>
       <p>Ik heb deze video toegevoegd omdat hij laat zien
-         hoe getallen, tekst, afbeeldingen en geluid met
-         nullen en enen kunnen worden voorgesteld.</p>
-      <a href="https://www.youtube.com/watch?v=USCBCmwMCDA"
-         target="_blank" rel="noopener">Bekijk op YouTube →</a>
+         hoe computers getallen, tekst, afbeeldingen en geluid
+         met bits kunnen voorstellen.</p>
     </div>
   </section>
 </main>
 
 <footer>Sahel · Havo 4 · Informatica</footer>
+
+<!-- De oefening werkt met deze JavaScript, zonder apart bestand. -->
+<script>
+  function schakel(knop) {
+    // Wissel de aangeklikte bit tussen aan en uit.
+    const aan = knop.classList.toggle("aan");
+    knop.querySelector("strong").textContent = aan ? "1" : "0";
+    knop.setAttribute("aria-pressed", String(aan));
+    bereken();
+  }
+
+  function bereken() {
+    let totaal = 0;
+    let binair = "";
+    const waarden = [];
+
+    // Bekijk alle acht knoppen van links naar rechts.
+    document.querySelectorAll("#bitknoppen button").forEach(function(knop) {
+      const aan = knop.classList.contains("aan");
+      binair += aan ? "1" : "0";
+
+      if (aan) {
+        const waarde = Number(knop.dataset.waarde);
+        totaal += waarde;
+        waarden.push(waarde);
+      }
+    });
+
+    // Toon het binaire getal, het antwoord en de optelsom.
+    document.getElementById("binairGetal").textContent = binair;
+    document.getElementById("antwoord").textContent = totaal;
+    document.getElementById("berekening").textContent =
+      waarden.length > 0
+        ? waarden.join(" + ") + " = " + totaal
+        : "Er staan nog geen bits aan.";
+  }
+
+  function wissen() {
+    // Zet alle knoppen terug naar nul.
+    document.querySelectorAll("#bitknoppen button").forEach(function(knop) {
+      knop.classList.remove("aan");
+      knop.querySelector("strong").textContent = "0";
+      knop.setAttribute("aria-pressed", "false");
+    });
+    bereken();
+  }
+</script>
+
 </body>
 </html>
