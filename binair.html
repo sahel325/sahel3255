@@ -3,138 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Binaire getallen - Sahel</title>
+  <title>Sahel | Binair</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <header>
-    <h1>Informatica</h1>
-    <p>Mijn website over computers en technologie | Sahel, havo 4</p>
-  </header>
+<header>
+  <h2>Sahel's website</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="computers.html">Computers</a>
+    <a href="binair.html">Binair</a>
+    <a href="kleuren.html">Kleuren</a>
+    <a href="ai.html">AI</a>
+  </nav>
+</header>
 
-  <div class="indeling">
+<main>
+  <h1>Het binaire stelsel</h1>
+  <p>Wij gebruiken meestal de cijfers 0 tot en met 9.
+     Het binaire stelsel gebruikt alleen 0 en 1.
+     Computers gebruiken dit om informatie voor te stellen.</p>
 
-    <nav aria-label="Menu">
-      <h3>Onderwerpen</h3>
-      <a href="index.html">Over mij</a>
-      <a href="computers.html">Hoe werkt een computer?</a>
-      <a href="binair.html">Binaire getallen</a>
-      <a href="kleuren.html">RGB en CMYK</a>
-      <a href="ai.html">AI in mijn leven</a>
-    </nav>
+  <h2>Bits en bytes</h2>
+  <p>Een bit kan een 0 of een 1 zijn.
+     Acht bits vormen samen één byte.
+     Met acht bits kun je 256 verschillende combinaties maken.</p>
 
-    <main>
-      <section>
-        <h2>Binaire getallen</h2>
+  <h2>Hoe reken je binair?</h2>
+  <p>De plaatswaarden zijn van rechts naar links:
+     1, 2, 4, 8, 16, 32, 64 en 128.
+     Je telt alleen de waarden mee waar een 1 staat.</p>
 
-        <p>
-          Wij gebruiken normaal de cijfers 0 tot en met 9.
-          Bij het binaire stelsel gebruik je alleen 0 en 1.
-          Computers slaan gegevens op met deze twee waarden.
-        </p>
+  <!-- Een tabel zet de plaatswaarden netjes naast elkaar. -->
+  <table>
+    <tr>
+      <th>Plaatswaarde</th>
+      <th>8</th><th>4</th><th>2</th><th>1</th>
+    </tr>
+    <tr>
+      <th>Bit</th>
+      <td>1</td><td>1</td><td>0</td><td>1</td>
+    </tr>
+  </table>
 
-        <p>
-          Eén binair cijfer heet een bit.
-          Acht bits samen vormen een byte.
-        </p>
+  <p>Dus 1101 is: 8 + 4 + 0 + 1 = <strong>13</strong>.</p>
 
-        <h3>Hoe reken je een binair getal om?</h3>
+  <h2>Binary Bonanza</h2>
+  <p>Met dit spel oefen je binaire getallen.
+     Klik op de afbeelding om het spel te openen.</p>
 
-        <p>
-          Elke plek heeft een eigen waarde. Van rechts naar links
-          zijn dat 1, 2, 4, 8, 16 en zo verder.
-          De waarde verdubbelt steeds.
-          Bij een 1 tel je de waarde mee en bij een 0 niet.
-        </p>
+  <!-- De afbeelding is klikbaar doordat hij binnen een link staat. -->
+  <a href="https://games.penjee.com/binary-bonanza/" target="_blank">
+    <img src="https://img.youtube.com/vi/USCBCmwMCDA/hqdefault.jpg"
+         alt="Klik hier om Binary Bonanza te spelen">
+  </a>
 
-        <table>
-          <caption>Voorbeeld met het getal 1101</caption>
-          <tr>
-            <th scope="row">Waarde</th>
-            <td>8</td>
-            <td>4</td>
-            <td>2</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <th scope="row">Bit</th>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>1</td>
-          </tr>
-        </table>
+  <h2>Video: Binary &amp; Data</h2>
+  <iframe src="https://www.youtube-nocookie.com/embed/USCBCmwMCDA"
+          title="Uitleg over binaire getallen en gegevens"
+          allowfullscreen></iframe>
 
-        <p class="voorbeeld">
-          Bij 1101 tel je 8, 4 en 1 bij elkaar op.
-          Dus 1101 = 8 + 4 + 1 = 13.
-        </p>
+  <p>Ik heb deze video toegevoegd omdat hij laat zien hoe computers
+     nullen en enen gebruiken. Ook legt hij uit dat tekst,
+     afbeeldingen en geluid met getallen kunnen worden opgeslagen.</p>
+</main>
 
-        <p>
-          Met acht bits zijn er 256 verschillende combinaties.
-          Je kunt daarmee bijvoorbeeld de hele getallen
-          van 0 tot en met 255 voorstellen.
-          Ook afbeeldingen, muziek en tekst worden
-          als binaire gegevens opgeslagen.
-        </p>
-
-        <h3>Zelf oefenen</h3>
-
-        <p>
-          Via de afbeelding hieronder kun je Binary Bonanza openen.
-          Dit is een spel om met binaire getallen te oefenen.
-        </p>
-
-        <a href="https://games.penjee.com/binary-bonanza/"
-           target="_blank" rel="noopener noreferrer">
-          <svg class="afbeelding" viewBox="0 0 500 150"
-               role="img" aria-label="Open het spel Binary Bonanza">
-            <rect width="500" height="150" fill="#254666"/>
-            <text x="250" y="60" text-anchor="middle"
-                  font-size="30" fill="#b4efad">0101 1100</text>
-            <text x="250" y="110" text-anchor="middle"
-                  font-size="24" fill="white">Binary Bonanza spelen</text>
-          </svg>
-        </a>
-
-        <h3>Video over binaire gegevens</h3>
-
-        <p>
-          Deze video gaat over hoe computers verschillende
-          soorten informatie voorstellen met nullen en enen.
-        </p>
-
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/USCBCmwMCDA"
-          title="Binaire getallen en gegevens"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
-
-        <h3>Bronnen</h3>
-
-        <ul>
-          <li>
-            <a href="https://code.org/en-US/resources/videos">
-              Code.org
-            </a>
-          </li>
-          <li>
-            <a href="https://games.penjee.com/binary-bonanza/">
-              Binary Bonanza
-            </a>
-          </li>
-        </ul>
-      </section>
-    </main>
-
-  </div>
-
-  <footer>
-    Sahel | Havo 4 | Informatica
-  </footer>
+<footer>Sahel | Havo 4 | Informatica</footer>
 
 </body>
 </html>

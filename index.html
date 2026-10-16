@@ -1,91 +1,55 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Sahel</title>
+  <title>Sahel | Home</title>
+  <!-- Dit bestand bepaalt de opmaak. -->
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <header>
-    <h1>Informatica</h1>
-    <p>Mijn website over computers en technologie | Sahel, havo 4</p>
-  </header>
+<!-- Hetzelfde menu staat op iedere pagina. -->
+<header>
+  <h2>Sahel's website</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="computers.html">Computers</a>
+    <a href="binair.html">Binair</a>
+    <a href="kleuren.html">Kleuren</a>
+    <a href="ai.html">AI</a>
+  </nav>
+</header>
 
-  <div class="indeling">
+<!-- Hier staat de inhoud van de pagina. -->
+<main>
+  <h1>Welkom op mijn website!</h1>
+  <p>Ik ben Sahel, ik ben 15 jaar en ik zit in havo 4.
+     Mijn favoriete vak is informatica.</p>
 
-    <nav aria-label="Menu">
-      <h3>Onderwerpen</h3>
-      <a href="index.html">Over mij</a>
-      <a href="computers.html">Hoe werkt een computer?</a>
-      <a href="binair.html">Binaire getallen</a>
-      <a href="kleuren.html">RGB en CMYK</a>
-      <a href="ai.html">AI in mijn leven</a>
-    </nav>
+  <h2>Mijn hobby's</h2>
+  <p>Ik ga graag naar de gym en ik voetbal graag.
+     Mijn favoriete voetbalclub is Real Madrid.</p>
 
-    <main>
-      <section>
-        <h2>Over mij</h2>
+  <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"
+       alt="Een sportschool met fitnessapparaten">
 
-        <p>
-          Welkom op mijn website. Ik ben Sahel en ik zit in havo 4.
-          Ik ga graag naar de gym en ik houd van voetballen.
-          Mijn favoriete voetbalclub is Real Madrid.
-          Informatica is mijn favoriete vak.
-        </p>
+  <h2>Over deze website</h2>
+  <p>Hier lees je over computers, het binaire stelsel,
+     kleurmodellen en AI. Gebruik het menu om verder te kijken.</p>
 
-        <p>
-          Op deze website leg ik een paar onderwerpen van informatica
-          uit. Het gaat over hoe een computer werkt, binaire getallen,
-          kleuren en AI. In het menu kun je een onderwerp kiezen.
-        </p>
+  <!-- Een iframe plaatst een YouTube-video op de site. -->
+  <h2>Video: hoe werken computers?</h2>
+  <iframe src="https://www.youtube-nocookie.com/embed/OAx_6-wdslM"
+          title="Introductie: hoe werken computers?"
+          allowfullscreen></iframe>
 
-        <svg class="afbeelding" viewBox="0 0 500 230"
-             role="img" aria-label="Een computerscherm">
-          <rect x="80" y="15" width="340" height="175"
-                fill="#254666"/>
-          <rect x="95" y="30" width="310" height="145"
-                fill="#d8e5f0"/>
-          <text x="250" y="95" text-anchor="middle"
-                font-size="28" fill="#254666">Informatica</text>
-          <text x="250" y="135" text-anchor="middle"
-                font-size="20" fill="#254666">Website van Sahel</text>
-          <rect x="230" y="190" width="40" height="25"
-                fill="#254666"/>
-          <rect x="180" y="215" width="140" height="10"
-                fill="#254666"/>
-        </svg>
+  <p>Ik heb deze video toegevoegd omdat hij een korte introductie
+     geeft over computers. Dat past bij mijn interesse in informatica
+     en de onderwerpen van mijn website.</p>
+</main>
 
-        <h3>Een introductie over computers</h3>
-
-        <p>
-          In deze video worden de belangrijkste onderdelen
-          van een computer uitgelegd.
-        </p>
-
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/DKGZlaPlVLY"
-          title="Introductie over computers"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
-
-        <p>
-          Bron:
-          <a href="https://code.org/en-US/resources/videos">
-            Code.org
-          </a>
-        </p>
-      </section>
-    </main>
-
-  </div>
-
-  <footer>
-    Sahel | Havo 4 | Informatica
-  </footer>
+<footer>Sahel | Havo 4 | Informatica</footer>
 
 </body>
-</html>es
+</html>
