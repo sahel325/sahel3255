@@ -5,11 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sahel | Kleurenlab</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Dit script laat de kleur veranderen als je schuift. -->
-  <script src="script.js" defer></script>
+
+  <!-- Extra opmaak voor de interactieve kleurmixer. -->
+  <style>
+    .kleurmixer {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid #ddd5f3;
+    }
+
+    #kleurvoorbeeld {
+      height: 280px;
+      border-radius: 16px;
+      border: 2px solid #d8d8e5;
+      margin-bottom: 20px;
+    }
+
+    .schuifregel {
+      margin: 20px 0;
+    }
+
+    .schuifregel label {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .schuifregel input {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    #rood { accent-color: #db3449; }
+    #groen { accent-color: #26985a; }
+    #blauw { accent-color: #356de0; }
+
+    .kleurcodes {
+      background: #f0ecff;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
+<!-- Het dropdownmenu verbindt de verschillende pagina's. -->
 <header>
   <a class="logo" href="index.html">SAHEL<span>.ONLINE</span></a>
   <nav>
@@ -30,129 +71,125 @@
   <section class="intro">
     <div>
       <p class="label">03 / HET KLEURENLAB</p>
-      <h1>Jij schuift.<br><span>De kleur verandert.</span></h1>
-      <p>Hoe maak je miljoenen kleuren met maar drie
-         kleurkanalen? Ontdek RGB en mix je eigen kleur.</p>
-      <a class="knop" href="#kleurenlab">Begin met mengen →</a>
+      <h1>Schuiven.<br>Mengen.<br><span>Ontdekken.</span></h1>
+      <p>Maak zelf kleuren met rood, groen en blauw licht.
+         Verplaats de schuifknoppen en zie direct wat er gebeurt.</p>
+      <a class="knop" href="#mixer">Probeer het zelf →</a>
     </div>
     <img src="https://img.youtube.com/vi/A-djTEO4vY8/hqdefault.jpg"
-         alt="Voorbeeldafbeelding van een video over RGB en CMYK">
+         alt="Voorbeeldafbeelding van de video over RGB en CMYK">
   </section>
 
-  <h2>Twee manieren om kleuren te maken</h2>
+  <h2 id="mixer">Welke kleur maak jij?</h2>
+
+  <section class="kleurmixer">
+    <p>Elke schuifknop loopt van <strong>0 tot 255</strong>.
+       Een hogere waarde betekent meer licht van die kleur.</p>
+
+    <!-- JavaScript verandert de achtergrond van dit vlak. -->
+    <div id="kleurvoorbeeld" aria-label="Voorbeeld van de gemengde kleur"></div>
+
+    <!-- oninput voert de functie uit tijdens het schuiven. -->
+    <div class="schuifregel">
+      <label for="rood">🔴 Rood <output id="roodGetal">101</output></label>
+      <input type="range" id="rood" min="0" max="255"
+             value="101" oninput="mengKleur()">
+    </div>
+
+    <div class="schuifregel">
+      <label for="groen">🟢 Groen <output id="groenGetal">82</output></label>
+      <input type="range" id="groen" min="0" max="255"
+             value="82" oninput="mengKleur()">
+    </div>
+
+    <div class="schuifregel">
+      <label for="blauw">🔵 Blauw <output id="blauwGetal">223</output></label>
+      <input type="range" id="blauw" min="0" max="255"
+             value="223" oninput="mengKleur()">
+    </div>
+
+    <!-- De codes veranderen mee met de schuifknoppen. -->
+    <div class="kleurcodes">
+      <strong id="rgbTekst"></strong><br>
+      <span id="hexTekst"></span>
+    </div>
+
+    <h3>Probeer een voorbeeld</h3>
+    <div class="voorbeelden">
+      <button onclick="kiesKleur(255, 0, 0)">Rood</button>
+      <button onclick="kiesKleur(0, 255, 0)">Groen</button>
+      <button onclick="kiesKleur(0, 0, 255)">Blauw</button>
+      <button onclick="kiesKleur(255, 255, 0)">Geel</button>
+      <button onclick="kiesKleur(255, 0, 255)">Magenta</button>
+      <button onclick="kiesKleur(0, 255, 255)">Cyaan</button>
+      <button onclick="kiesKleur(255, 255, 255)">Wit</button>
+      <button onclick="kiesKleur(0, 0, 0)">Zwart</button>
+    </div>
+  </section>
+
+  <h2>Probeer deze uitdagingen</h2>
+  <section class="rij">
+    <article class="kaart">
+      <p class="label">UITDAGING 1</p>
+      <h3>Van zwart naar wit</h3>
+      <p>Zet eerst alles op 0. Schuif daarna alle drie de
+         waarden omhoog. Wat gebeurt er als ze gelijk blijven?</p>
+      <details>
+        <summary>Uitleg</summary>
+        <p>Gelijke waarden geven grijstinten.
+           Alles op 0 is zwart. Alles op 255 is wit.</p>
+      </details>
+    </article>
+
+    <article class="kaart">
+      <p class="label">UITDAGING 2</p>
+      <h3>Maak geel licht</h3>
+      <p>Kun jij geel maken zonder een gele schuifknop?</p>
+      <details>
+        <summary>Bekijk de oplossing</summary>
+        <p>Rood op 255, groen op 255 en blauw op 0.
+           Rood en groen licht samen geven geel.</p>
+      </details>
+    </article>
+
+    <article class="kaart">
+      <p class="label">UITDAGING 3</p>
+      <h3>Jouw favoriete kleur</h3>
+      <p>Maak een kleur die jij mooi vindt.
+         Noteer de RGB-waarden of de hexcode.
+         Die kun je gebruiken in je eigen CSS.</p>
+    </article>
+  </section>
+
+  <h2>RGB of CMYK?</h2>
   <section class="rij">
     <article class="kaart">
       <p class="label">💡 / SCHERMEN</p>
       <h3>RGB mengt licht</h3>
       <p>RGB staat voor rood, groen en blauw.
-         Je telefoon en computerscherm gebruiken dit model.</p>
-      <p>Meer licht maakt de kleur lichter.
+         Schermen gebruiken deze lichtkleuren.</p>
+      <p>Meer licht toevoegen maakt het resultaat lichter.
          Dit heet additieve kleurmenging.</p>
-      <p><strong>Geen licht:</strong> zwart.<br>
-         <strong>Alle drie op volle sterkte:</strong> wit.</p>
     </article>
+
     <article class="kaart">
       <p class="label">🖨️ / DRUKWERK</p>
       <h3>CMYK gebruikt inkt</h3>
       <p>CMYK staat voor cyaan, magenta, geel en zwart.
-         Het wordt gebruikt bij kleurendruk.</p>
-      <p>Inkt neemt een deel van het licht op.
+         Dit model wordt gebruikt bij kleurendruk.</p>
+      <p>Inkt absorbeert een deel van het licht.
          Dit heet subtractieve kleurmenging.</p>
-      <p><strong>Geen inkt op wit papier:</strong> wit.<br>
-         <strong>Meer inkt:</strong> meestal donkerder.</p>
-    </article>
-  </section>
-
-  <!-- De id's verbinden deze onderdelen met script.js. -->
-  <h2 id="kleurenlab">Maak jouw eigen kleur</h2>
-  <section class="kaart">
-    <p class="label">HET RGB-KLEURENLAB</p>
-    <p>Bij 8 bits per kleurkanaal loopt elke waarde van
-       0 tot en met 255. Probeer de schuifknoppen!</p>
-
-    <div class="lab">
-      <div>
-        <label for="rood">🔴 Rood:
-          <output id="rWaarde">59</output>
-        </label>
-        <input id="rood" type="range" min="0" max="255" value="59">
-
-        <label for="groen">🟢 Groen:
-          <output id="gWaarde">130</output>
-        </label>
-        <input id="groen" type="range" min="0" max="255" value="130">
-
-        <label for="blauw">🔵 Blauw:
-          <output id="bWaarde">246</output>
-        </label>
-        <input id="blauw" type="range" min="0" max="255" value="246">
-      </div>
-
-      <div>
-        <div id="kleurvak" class="kleurvak"></div>
-        <p><strong id="rgbCode">rgb(59, 130, 246)</strong></p>
-        <p>Hexcode: <strong id="hexCode">#3b82f6</strong></p>
-      </div>
-    </div>
-
-    <!-- Deze knoppen vullen de schuifknoppen automatisch in. -->
-    <p><strong>Kies een kleur als startpunt:</strong></p>
-    <div class="voorbeelden">
-      <button data-kleur="255,0,0">Rood</button>
-      <button data-kleur="0,255,0">Groen</button>
-      <button data-kleur="0,0,255">Blauw</button>
-      <button data-kleur="255,255,0">Geel</button>
-      <button data-kleur="255,0,255">Magenta</button>
-      <button data-kleur="0,255,255">Cyaan</button>
-      <button data-kleur="255,255,255">Wit</button>
-      <button data-kleur="0,0,0">Zwart</button>
-    </div>
-  </section>
-
-  <h2>Kun jij deze kleuren maken?</h2>
-  <section class="rij">
-    <article class="kaart">
-      <p class="label">UITDAGING 1</p>
-      <h3>Maak geel</h3>
-      <details>
-        <summary>Bekijk de waarden</summary>
-        <p>Rood: 255<br>Groen: 255<br>Blauw: 0</p>
-      </details>
-    </article>
-    <article class="kaart">
-      <p class="label">UITDAGING 2</p>
-      <h3>Maak grijs</h3>
-      <details>
-        <summary>Bekijk de waarden</summary>
-        <p>Gebruik drie gelijke waarden, bijvoorbeeld
-           rood: 128, groen: 128 en blauw: 128.</p>
-      </details>
-    </article>
-    <article class="kaart">
-      <p class="label">UITDAGING 3</p>
-      <h3>Maak oranje</h3>
-      <details>
-        <summary>Bekijk een voorbeeld</summary>
-        <p>Rood: 255<br>Groen: 165<br>Blauw: 0</p>
-      </details>
     </article>
   </section>
 
   <section class="banner">
-    <p class="label">VAN KLEUR NAAR CODE</p>
-    <h2>Een kleur heeft ook een adres</h2>
-    <p>In CSS kun je RGB-waarden of een hexcode gebruiken.
-       <code>rgb(59, 130, 246)</code> en <code>#3b82f6</code>
-       geven dezelfde blauwe kleur.</p>
-    <p>De drie paren in de hexcode horen bij rood, groen en blauw.
-       In het kleurenlab zie je beide codes veranderen.</p>
+    <h2>Miljoenen mogelijkheden</h2>
+    <p>Met 256 waarden per kleurkanaal kun je
+       <strong>256 × 256 × 256 = 16.777.216</strong>
+       verschillende RGB-combinaties maken.</p>
+    <p>Een hexcode beschrijft dezelfde kleur met drie paren:
+       eerst rood, daarna groen en dan blauw.</p>
   </section>
-
-  <details>
-    <summary>Hoeveel RGB-kleuren kun je hiermee maken?</summary>
-    <p>Elk kanaal heeft 256 mogelijke waarden.
-       Dus 256 × 256 × 256 = 16.777.216 verschillende combinaties.</p>
-  </details>
 
   <section class="video">
     <iframe src="https://www.youtube-nocookie.com/embed/A-djTEO4vY8"
@@ -160,10 +197,10 @@
             loading="lazy" allowfullscreen></iframe>
     <div>
       <p class="label">KIJK VERDER</p>
-      <h2>Waarom twee kleurmodellen?</h2>
+      <h2>Licht tegenover inkt</h2>
       <p>Ik heb deze video toegevoegd omdat hij kort uitlegt
          waarom schermen RGB en drukwerk CMYK gebruiken.
-         Dat sluit aan bij het kleurenlab.</p>
+         Dat sluit aan bij mijn kleurenlab.</p>
       <a href="https://www.youtube.com/watch?v=A-djTEO4vY8"
          target="_blank" rel="noopener">Bekijk op YouTube →</a>
     </div>
@@ -171,5 +208,45 @@
 </main>
 
 <footer>Sahel · Havo 4 · Informatica</footer>
+
+<!-- JavaScript maakt de kleurmixer interactief. -->
+<script>
+  function mengKleur() {
+    // Lees de waarden van de drie schuifknoppen.
+    const r = Number(document.getElementById("rood").value);
+    const g = Number(document.getElementById("groen").value);
+    const b = Number(document.getElementById("blauw").value);
+
+    // Maak een RGB-kleur en pas het grote kleurvlak aan.
+    const kleur = `rgb(${r}, ${g}, ${b})`;
+    document.getElementById("kleurvoorbeeld").style.backgroundColor = kleur;
+
+    // Laat de huidige waarden naast de schuifknoppen zien.
+    document.getElementById("roodGetal").textContent = r;
+    document.getElementById("groenGetal").textContent = g;
+    document.getElementById("blauwGetal").textContent = b;
+    document.getElementById("rgbTekst").textContent = kleur;
+
+    // Zet de drie waarden om naar een hexadecimale kleurcode.
+    const hex = "#" +
+      r.toString(16).padStart(2, "0") +
+      g.toString(16).padStart(2, "0") +
+      b.toString(16).padStart(2, "0");
+
+    document.getElementById("hexTekst").textContent = hex;
+  }
+
+  function kiesKleur(r, g, b) {
+    // Vul de schuifknoppen in als iemand een voorbeeld kiest.
+    document.getElementById("rood").value = r;
+    document.getElementById("groen").value = g;
+    document.getElementById("blauw").value = b;
+    mengKleur();
+  }
+
+  // Toon meteen de beginkleur wanneer de pagina opent.
+  mengKleur();
+</script>
+
 </body>
 </html>
